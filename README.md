@@ -1,70 +1,42 @@
-# Getting Started with Create React App
+# Crud_Hooks 🎣
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+For this project i wanted to practice creating another projects using react hooks and to deepen my understanding of UseState
 
-## Available Scripts
+#notes
+App js logic: A real API and database would have auto-incremented the user.id. Since I used neither in this project, I incremented the ID of the user manually. The function takes a user object as a parameter, and then add them the the users array of objects. the spread opperatoed (...users) ensures that all of the previous users remain in the array. 
 
-In the project directory, you can run:
+//App.js//
+const addUser = (user) => {
+  user.id = users.length + 1
+  setUser([...users, user])
+}
 
-### `npm start`
+AddUserForm.js logic: Once forms were created I added temporary state to keep track of what was in the add user form. An initial stae was created usuing empty value. User state was set to the empty values. Initial state was put into a variable, because after someone submits the form, we can return it to the inital, empty value. 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+//AddUserForm.js//
+const initialFormState = { id: null, name: '', username: '' }
+const [user, setUser] = useState(initialFormState)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Event handling: Event always gets passed through any on event in the DOM. name(key) and value are gathered from form using destructuring. User was set by using computed property names to dynamically set the name using [name] and value. 
 
-### `npm test`
+const handleInputChange = (event) => {
+  const { name, value } = event.target
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+  setUser({ ...user, [name]: value })
+}
 
-### `npm run build`
+value were then extracted from the state object, and function referenced in the onChange event. 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Submitting the form: I created an onSubmit function and prevented the dafault page load. 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Validation was added to make sure empty values cannon be submitted. Finally the setter was used to reset the form to its initial value after successfull submission. 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<form
+  onSubmit={event => {
+    event.preventDefault()
+    if (!user.name || !user.username) return
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+    props.addUser(user)
+    setUser(initialFormState)
+  }}
+>

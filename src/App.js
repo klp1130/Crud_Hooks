@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import UserTable from './tables/UserTable'
+import AddUserForm from './forms/AddUserForm'
 
 const App = () => {
   const usersData = [
@@ -7,7 +8,13 @@ const App = () => {
     { id: 2, name: 'Mahina', username: 'Grace321' },
     { id: 3, name: 'Keenan', username: 'LP253' },
   ]
-  const [users, setUsers] = useState(usersData)
+  const [users, setUser] = useState(usersData)
+
+  const addUser = (user) => {
+    user.id = users.length + 1 
+    setUser([...users, user])
+  }
+
 
   return (
     <div className="container">
@@ -15,6 +22,7 @@ const App = () => {
       <div className="flex-row">
         <div className="flex-large">
           <h2>Add user</h2>
+          <AddUserForm addUser={addUser} />
         </div>
         <div className="flex-large">
           <h2>View users</h2>
