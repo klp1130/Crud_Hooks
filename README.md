@@ -47,3 +47,13 @@ Validation was added to make sure empty values cannon be submitted. Finally the 
 # edit Toggle
 "use a ternary operation to check if the editing state is true or not. If true, show the edit form. If false, show the add form. "
 
+# Effect Hook 
+initially when editing a user and trying to switch to another user, nothing would happen. The component was already open and although the state on the parent as changed it was not registered down to the props. Use effect came into use here. I let the EditUSerForm component know the props have changed, which I had done with componentDidOpdate.
+
+    useEffect(() => {
+  setUser(props.currentUser)
+}, [props])
+
+Here a callbacl function was created that updates the user state with the new prop thats being sent through. with Effect hook we can pass [props] through to le it know we are watching the props. 
+
+
