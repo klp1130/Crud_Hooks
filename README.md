@@ -44,4 +44,6 @@ Validation was added to make sure empty values cannon be submitted. Finally the 
 
 # edtRow function 
 
+# edit Toggle
+"use a ternary operation to check if the editing state is true or not. If true, show the edit form. If false, show the add form. "
 
