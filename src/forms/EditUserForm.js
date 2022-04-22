@@ -40,7 +40,7 @@ const EditUserForm = (props) => {
       <button>Update user</button>
       <button 
         onClick={() => props.setEditing(false)}
-        className='button muted=button'
+        className='muted_button'
     >
             Cancel
         </button>
