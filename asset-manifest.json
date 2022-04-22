@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/crus/static/css/main.e8b6155c.css",
-    "main.js": "/crus/static/js/main.02a020f4.js",
-    "index.html": "/crus/index.html",
-    "main.e8b6155c.css.map": "/crus/static/css/main.e8b6155c.css.map",
-    "main.02a020f4.js.map": "/crus/static/js/main.02a020f4.js.map"
+    "main.css": "/Crud_Hooks/static/css/main.e8b6155c.css",
+    "main.js": "/Crud_Hooks/static/js/main.02a020f4.js",
+    "index.html": "/Crud_Hooks/index.html",
+    "main.e8b6155c.css.map": "/Crud_Hooks/static/css/main.e8b6155c.css.map",
+    "main.02a020f4.js.map": "/Crud_Hooks/static/js/main.02a020f4.js.map"
   },
   "entrypoints": [
     "static/css/main.e8b6155c.css",
