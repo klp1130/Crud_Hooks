@@ -1,6 +1,6 @@
 # Crud_Hooks 🎣
 
-For this project I wanted to deepend me undertanding of  state by creating another project using react hooks/UseState
+For this project I wanted to deepen my undertanding of  state by creating another project using react hooks/UseState
 
 # notes
 App js logic: A real API and database would have auto-incremented the user.id. Since I used neither in this project, I incremented the ID of the user manually. The function takes a user object as a parameter, and then add them the the users array of objects. the spread opperatoed (...users) ensures that all of the previous users remain in the array. 
@@ -56,4 +56,17 @@ initially when editing a user and trying to switch to another user, nothing woul
 
 Here a callbacl function was created that updates the user state with the new prop thats being sent through. with Effect hook we can pass [props] through to le it know we are watching the props. 
 
+# Font choice
+"font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif
 
+This solution is harmless and very useful.
+It is used by GitHub, Wordpress, Bootstrap, Medium, Ghost, etc.
+
+The main reason for using "system" fonts is performance. Fonts are typically one of the largest/heaviest resources loaded on a website. If we can use a font already available on the user’s machine, we can completely eliminate the need to fetch this resource, making load times noticeably faster.
+The beauty of system fonts is that it matches what the current OS uses, so it can be a comfortable look.
+
+-apple-system targets San Francisco in Safari (on Mac OS X and iOS), and it targets Neue Helvetica and Lucida Grande on older versions of Mac OS X. It properly selects between San Francisco Text and San Francisco Display depending on the text’s size.
+system-ui represents the default UI font on a given platform.
+BlinkMacSystemFont is the equivalent for Chrome on Mac OS X.
+Segoe UI targets Windows and Windows Phone.
+Roboto targets Android and newer Chrome OS. It is deliberately listed after Segoe UI so that if you’re an Android developer on Windows and have Roboto installed, Segoe UI will be used instead."
