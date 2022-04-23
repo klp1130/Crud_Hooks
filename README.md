@@ -1,6 +1,6 @@
 # Crud_Hooks 🎣
 
-#Motivation
+# Motivation
 For this project I wanted to deepen my undertanding of state by creating another project using react hooks/UseState.
 
 # Learning
