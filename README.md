@@ -1,6 +1,6 @@
 # Crud_Hooks 🎣
 
-For this project I wanted to deepen my undertanding of  state by creating another project using react hooks/UseState.
+For this project I wanted to deepen my understanding of state by creating another project using react hooks/UseState.
 
 # notes
 App js logic: A real API and database would have auto-incremented the user.id. Since I used neither in this project, I incremented the ID of the user manually. The function takes a user object as a parameter, and then add them the the users array of objects. the spread opperatoed (...users) ensures that all of the previous users remain in the array. 
